@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "243118329934",
+    "firebase_url": "https://test-39e48-default-rtdb.firebaseio.com",
+    "project_id": "test-39e48",
+    "storage_bucket": "test-39e48.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:243118329934:android:ea16678a3218c7090fb31f",
+        "android_client_info": {
+          "package_name": "com.example.cobadehgar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "243118329934-bbb053nm3uqff9ek4v67r6c5f4d8cc6j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZf6tWlL2TKWK_R-i6CknqpSQMfBeN4l4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "243118329934-bbb053nm3uqff9ek4v67r6c5f4d8cc6j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:243118329934:android:18280e045eba78070fb31f",
+        "android_client_info": {
+          "package_name": "com.example.pemipiljagung"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "243118329934-bbb053nm3uqff9ek4v67r6c5f4d8cc6j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZf6tWlL2TKWK_R-i6CknqpSQMfBeN4l4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "243118329934-bbb053nm3uqff9ek4v67r6c5f4d8cc6j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:243118329934:android:f5129044d94104860fb31f",
+        "android_client_info": {
+          "package_name": "com.freshism.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "243118329934-bbb053nm3uqff9ek4v67r6c5f4d8cc6j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZf6tWlL2TKWK_R-i6CknqpSQMfBeN4l4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "243118329934-bbb053nm3uqff9ek4v67r6c5f4d8cc6j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
