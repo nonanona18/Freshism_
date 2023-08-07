@@ -203,25 +203,31 @@ public class DashboardFragment extends Fragment {
 
     private String getStatus() {
         String result = "";
-        if (udara >= 0 && udara <= 50 && debu >= 0 && debu <= 50) {
-            result = "SEHAT";
-        } else if (udara >= 0 && udara <= 50 && debu >= 51 && debu <= 150) {
-            result = "SEHAT";
-        } else if (udara >= 51 && udara <= 100 && debu >= 0 && debu <= 50) {
-            result = "SEHAT";
-        } else if (udara >= 51 && udara <= 100 && debu >= 51 && debu <= 150) {
-            result = "SEHAT";
-        } else if (udara >= 0 && udara <= 50 && debu >= 151) {
-            result = "TIDAK SEHAT";
-        } else if (udara >= 51 && udara <= 100 && debu >= 151) {
-            result = "TIDAK SEHAT";
-        } else if (udara >= 100 && debu >= 0 && debu <= 50) {
-            result = "TIDAK SEHAT";
-        } else if (udara >= 100 && debu >= 51 && debu <= 150) {
-            result = "TIDAK SEHAT";
-        } else if (udara >= 100 && debu >= 151) {
-            result = "TIDAK SEHAT";
+
+        if (udara >= 0 && udara <= 50) {
+            if (debu >= 0 && debu <= 50) {
+                result = "SEHAT";
+            } else if (debu >= 51 && debu <= 150) {
+                result = "TIDAK SEHAT";
+            }
+        } else if (udara >= 51 && udara <= 100) {
+            if (debu >= 0 && debu <= 50) {
+                result = "SEHAT";
+            } else if (debu >= 51 && debu <= 150) {
+                result = "SEHAT";
+            } else if (debu >= 151) {
+                result = "TIDAK SEHAT";
+            }
+        } else if (udara >= 100) {
+            if (debu >= 0 && debu <= 50) {
+                result = "TIDAK SEHAT";
+            } else if (debu >= 51 && debu <= 150) {
+                result = "TIDAK SEHAT";
+            } else if (debu >= 151) {
+                result = "TIDAK SEHAT";
+            }
         }
+
         return result;
     }
 
