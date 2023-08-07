@@ -120,22 +120,31 @@ public class HomeFragment extends Fragment {
         String deskripsi = "";
         if (udara >= 0 && udara <= 50 && debu >= 0 && debu <= 50) {
             result = "Sehat";
+            deskripsi="Kualitas udara dirumah Anda SEHAT. Udara relatif bersih dengan sedikit partikel debu.";
         } else if (udara >= 0 && udara <= 50 && debu >= 51 && debu <= 150) {
             result = "Sehat";
+            deskripsi="Kualitas udara di rumah Anda SEHAT. Kebersihan udara relatif bersih dan partikel debu berada berada pada level sedang.";
         } else if (udara >= 51 && udara <= 100 && debu >= 0 && debu <= 50) {
             result = "Sehat";
+            deskripsi ="Kualitas udara di rumah Anda SEHAT. Kebersihan udara berada pada level sedang dengan partikel debu relatif sedikit.";
         } else if (udara >= 51 && udara <= 100 && debu >= 51 && debu <= 150) {
             result = "Sehat";
+            deskripsi="Kualitas udara di rumah Anda SEHAT. Kebersihan udara dan jumlah partikel debu berada di level sedang.";
         } else if (udara >= 0 && udara <= 50 && debu >= 151) {
             result = "Tidak Sehat";
+            deskripsi="Kualitas udara di rumah Anda TIDAK SEHAT. Kebersihan udara relatif bersih akan tetapi jumlah partikel debu banyak. Jagalah kebersihan rumah Anda dan nyalakan Freshism.";
         } else if (udara >= 51 && udara <= 100 && debu >= 151) {
             result = "Tidak Sehat";
+            deskripsi="Kualitas udara di rumah Anda TIDAK SEHAT. Kebersihan udara relatif sedang, dan jumlah partikel debu banyak. Atur sirkulasi udara dan jagalah kebersihan rumah Anda. Segera nyalakan Freshism.";
         } else if (udara >= 100 && debu >= 0 && debu <= 50) {
             result = "Tidak Sehat";
+            deskripsi ="Kualitas udara di rumah Anda TIDAK SEHAT. Kebersihan udara buruk dan jumlah partikel debu relatif sedikit. Atur sirkulasi udara dan segera nyalakan Freshism.";
         } else if (udara >= 100 && debu >= 51 && debu <= 150) {
             result = "Tidak Sehat";
+            deskripsi ="Kualitas udara di rumah Anda TIDAK SEHAT. Kebersihan udara buruk dan jumlah partikel debu relatif sedang. Tetap atur sirkulasi udara dan jaga kebersihan rumah. Segera nyalakan Freshism.";
         } else if (udara >= 100 && debu >= 151) {
             result = "Tidak Sehat";
+            deskripsi ="Kualitas udara dirumah Anda TIDAK SEHAT. Kebersihan udara buruk dan jumlah partikel udara banyak. Segera nyalakan Freshism";
         }
         return new Pair<>(result, deskripsi);
     }
