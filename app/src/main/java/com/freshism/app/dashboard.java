@@ -12,7 +12,7 @@ import com.freshism.app.ui.home.HomeFragment;
 import com.freshism.app.ui.profile.ProfileFragment;
 import com.google.android.material.navigation.NavigationBarView;
 
-public class dashboard extends AppCompatActivity {
+public class Dashboard extends AppCompatActivity {
 
     private ActivityDashboardBinding binding;
 
