@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         String email = PreferencesController.getEmail(this);
         if (!email.isEmpty()) {
-            Intent intent = new Intent(MainActivity.this, dashboard.class);
+            Intent intent = new Intent(MainActivity.this, Dashboard.class);
             startActivity(intent);
             finish();
         }
