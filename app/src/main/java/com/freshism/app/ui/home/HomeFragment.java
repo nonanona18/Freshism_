@@ -55,48 +55,45 @@ public class HomeFragment extends Fragment {
         debuRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                handler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
+                Double doubleValue = dataSnapshot.getValue(Double.class);
+                if (doubleValue != null){
                         // Ambil nilai dari dataSnapshot ke TextView
-                        debu = (int) Math.round(dataSnapshot.getValue(Double.class));
+                        debu = (int) Math.round(doubleValue);
 
-                        // Ambil status
-                        String status = getStatus().first;
-                        // Ambil deskripsi hasil
-                        String deskripsi = getStatus().second;
+                    // Ambil status
+                    String status = getStatus().first;
+                    // Ambil deskripsi hasil
+                    String deskripsi = getStatus().second;
 
-                        binding.txtExplaination.setText(deskripsi);
-                        binding.btnStatus.setText(status);
-                    }
-                }, 500);
+                    binding.txtExplaination.setText(deskripsi);
+                    binding.btnStatus.setText(status);
+                } else {
+                    // Handle jika nilai double dari dataSnapshot bernilai null
+                    // Misalnya, tampilkan pesan kesalahan atau lakukan tindakan sesuai kebutuhan
+                }
             }
-
             @Override
             public void onCancelled(DatabaseError databaseError) {
                 // Handle jika ada error
             }
         });
 
-        // Ambil data dari Firebase Realtime Database realtime
+// Ambil data dari Firebase Realtime Database secara realtime untuk debu dan udara
         udaraRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                handler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        // Ambil nilai dari dataSnapshot ke TextView
-                        udara = (int) Math.round(dataSnapshot.getValue(Double.class));
+                Double doubleValue = dataSnapshot.getValue(Double.class);
+                if (doubleValue!=null){
+                udara = (int) Math.round(doubleValue);
 
-                        // Ambil status
-                        String status = getStatus().first;
-                        // Ambil deskripsi hasil
-                        String deskripsi = getStatus().second;
+                // Ambil status dan deskripsi hasil
+                Pair<String, String> statusPair = getStatus();
+                String status = statusPair.first;
+                String deskripsi = statusPair.second;
 
-                        binding.txtExplaination.setText(deskripsi);
-                        binding.btnStatus.setText(status);
-                    }
-                }, 500);
+                binding.txtExplaination.setText(deskripsi);
+                binding.btnStatus.setText(status);
+                }
             }
 
             @Override
@@ -104,13 +101,17 @@ public class HomeFragment extends Fragment {
                 // Handle jika ada error
             }
         });
+
+
 
         binding.btnAnalysis.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (getActivity()!=null){
                 getActivity().getSupportFragmentManager()
                         .beginTransaction().replace(R.id.containerCustomer, new DashboardFragment())
                         .commit();
+                }
             }
         });
     }

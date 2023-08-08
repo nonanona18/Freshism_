@@ -146,9 +146,17 @@ public class DashboardFragment extends Fragment {
                         Toast.makeText(getContext(), "Value set to ON", Toast.LENGTH_SHORT).show();
                     }
                 } else {
-                    autoRef.setValue(0);
-                    if (getContext() != null) {
-                        Toast.makeText(getContext(), "Value set to OFF", Toast.LENGTH_SHORT).show();
+                    String status = getStatus();
+                    if (status.equals("TIDAK SEHAT")) {
+                        binding.switchAuto.setChecked(true);
+                        if (getContext() != null) {
+                            Toast.makeText(getContext(), "Value set to ON", Toast.LENGTH_SHORT).show();
+                        }
+                    } else {
+                        autoRef.setValue(0);
+                        if (getContext() != null) {
+                            Toast.makeText(getContext(), "Value set to OFF", Toast.LENGTH_SHORT).show();
+                        }
                     }
                 }
             }
@@ -184,7 +192,7 @@ public class DashboardFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 Integer value = snapshot.getValue(Integer.class);
                 if (value != null) {
-                    if (value.equals(1)) {
+                    if (value.equals(1) || getStatus().equals("TIDAK SEHAT")) {
                         // Nilai true (ON), tombol "ON" diklik
                         binding.switchAuto.setChecked(true);
                     } else {
@@ -193,7 +201,6 @@ public class DashboardFragment extends Fragment {
                     }
                 }
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
                 // Handle error
