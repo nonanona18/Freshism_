@@ -55,21 +55,23 @@ public class HomeFragment extends Fragment {
         debuRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Double doubleValue = dataSnapshot.getValue(Double.class);
-                if (doubleValue != null){
+                if (binding != null) {
+                    Double doubleValue = dataSnapshot.getValue(Double.class);
+                    if (doubleValue != null) {
                         // Ambil nilai dari dataSnapshot ke TextView
                         debu = (int) Math.round(doubleValue);
 
-                    // Ambil status
-                    String status = getStatus().first;
-                    // Ambil deskripsi hasil
-                    String deskripsi = getStatus().second;
+                        // Ambil status
+                        String status = getStatus().first;
+                        // Ambil deskripsi hasil
+                        String deskripsi = getStatus().second;
 
-                    binding.txtExplaination.setText(deskripsi);
-                    binding.btnStatus.setText(status);
-                } else {
-                    // Handle jika nilai double dari dataSnapshot bernilai null
-                    // Misalnya, tampilkan pesan kesalahan atau lakukan tindakan sesuai kebutuhan
+                        binding.txtExplaination.setText(deskripsi);
+                        binding.btnStatus.setText(status);
+                    } else {
+                        // Handle jika nilai double dari dataSnapshot bernilai null
+                        // Misalnya, tampilkan pesan kesalahan atau lakukan tindakan sesuai kebutuhan
+                    }
                 }
             }
             @Override
@@ -82,17 +84,19 @@ public class HomeFragment extends Fragment {
         udaraRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Double doubleValue = dataSnapshot.getValue(Double.class);
-                if (doubleValue!=null){
-                udara = (int) Math.round(doubleValue);
+                if (binding != null) {
+                    Double doubleValue = dataSnapshot.getValue(Double.class);
+                    if (doubleValue != null) {
+                        udara = (int) Math.round(doubleValue);
 
-                // Ambil status dan deskripsi hasil
-                Pair<String, String> statusPair = getStatus();
-                String status = statusPair.first;
-                String deskripsi = statusPair.second;
+                        // Ambil status dan deskripsi hasil
+                        Pair<String, String> statusPair = getStatus();
+                        String status = statusPair.first;
+                        String deskripsi = statusPair.second;
 
-                binding.txtExplaination.setText(deskripsi);
-                binding.btnStatus.setText(status);
+                        binding.txtExplaination.setText(deskripsi);
+                        binding.btnStatus.setText(status);
+                    }
                 }
             }
 

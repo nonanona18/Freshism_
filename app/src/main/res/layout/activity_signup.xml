@@ -37,7 +37,8 @@
             android:padding="8dp"
             android:background="@color/grey_background"
             android:inputType="textEmailAddress"
-            android:id="@+id/email" />
+            android:id="@+id/email"
+            style="@style/black"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -52,7 +53,8 @@
             android:padding="8dp"
             android:background="@color/grey_background"
             android:inputType="textPassword"
-            android:id="@+id/password" />
+            android:id="@+id/password"
+            style="@style/black"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -67,7 +69,8 @@
             android:padding="8dp"
             android:background="@color/grey_background"
             android:inputType="textPassword"
-            android:id="@+id/confirmpassword" />
+            android:id="@+id/confirmpassword"
+            style="@style/black"/>
 
         <com.google.android.material.button.MaterialButton
             android:layout_width="wrap_content"
