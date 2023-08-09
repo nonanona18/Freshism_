@@ -56,11 +56,15 @@ public class DashboardFragment extends Fragment {
                 Double nilaiDebu = dataSnapshot.getValue(Double.class);
                 if (nilaiDebu != null) {
                     debu = (int) Math.round(nilaiDebu);
-                    binding.txtDebu.setText(String.valueOf(debu));
+                    if (binding!=null && binding.txtDebu!=null){
+                        binding.txtDebu.setText(String.valueOf(debu));
+                    }
 
                     // Pengecekan hasil status udara & debu
                     String status = getStatus();
-                    binding.txtStatus.setText(status);
+                    if (binding !=null && binding.txtStatus !=null){
+                        binding.txtStatus.setText(status);
+                    }
                 }
             }
 
@@ -77,11 +81,14 @@ public class DashboardFragment extends Fragment {
                 Double nilaiUdara = dataSnapshot.getValue(Double.class);
                 if (nilaiUdara != null) {
                     udara = (int) Math.round(nilaiUdara);
-                    binding.txtUdara.setText(String.valueOf(udara));
+                    if (binding!=null && binding.txtUdara!=null){
+                        binding.txtUdara.setText(String.valueOf(udara));}
 
                     // Pengecekan hasil status udara & debu
                     String status = getStatus();
-                    binding.txtStatus.setText(status);
+                    if (binding!=null && binding.txtStatus!=null){
+                        binding.txtStatus.setText(status);
+                    }
                 }
             }
 
@@ -141,16 +148,20 @@ public class DashboardFragment extends Fragment {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    autoRef.setValue(1);
-                    if (getContext() != null) {
-                        Toast.makeText(getContext(), "Value set to ON", Toast.LENGTH_SHORT).show();
+                    if (binding!=null && binding.switchAuto !=null) {
+                        autoRef.setValue(1);
+                        if (getContext() != null) {
+                            Toast.makeText(getContext(), "Value set to ON", Toast.LENGTH_SHORT).show();
+                        }
                     }
                 } else {
                     String status = getStatus();
                     if (status.equals("TIDAK SEHAT")) {
-                        binding.switchAuto.setChecked(true);
-                        if (getContext() != null) {
-                            Toast.makeText(getContext(), "Value set to ON", Toast.LENGTH_SHORT).show();
+                        if (binding!= null && binding.switchAuto!=null) {
+                            binding.switchAuto.setChecked(true);
+                            if (getContext() != null) {
+                                Toast.makeText(getContext(), "Value set to ON", Toast.LENGTH_SHORT).show();
+                            }
                         }
                     } else {
                         autoRef.setValue(0);
@@ -170,12 +181,16 @@ public class DashboardFragment extends Fragment {
                 if (value != null) {
                     if (value.equals("1")) {
                         // Nilai true (ON), tombol "ON" diklik
-                        binding.switchOnManual.setChecked(true);
-                        binding.switchOffManual.setChecked(false);
+                        if (binding!=null){
+                            binding.switchOnManual.setChecked(true);
+                            binding.switchOffManual.setChecked(false);
+                        }
                     } else {
                         // Nilai false (OFF), tombol "OFF" diklik
-                        binding.switchOnManual.setChecked(false);
-                        binding.switchOffManual.setChecked(true);
+                        if (binding != null) {
+                            binding.switchOnManual.setChecked(false);
+                            binding.switchOffManual.setChecked(true);
+                        }
                     }
                 }
             }
@@ -194,10 +209,14 @@ public class DashboardFragment extends Fragment {
                 if (value != null) {
                     if (value.equals(1) || getStatus().equals("TIDAK SEHAT")) {
                         // Nilai true (ON), tombol "ON" diklik
-                        binding.switchAuto.setChecked(true);
+                        if (binding!=null) {
+                            binding.switchAuto.setChecked(true);
+                        }
                     } else {
                         // Nilai false (OFF), tombol "OFF" diklik
-                        binding.switchAuto.setChecked(false);
+                        if (binding != null) {
+                            binding.switchAuto.setChecked(false);
+                        }
                     }
                 }
             }
